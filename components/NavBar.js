@@ -9,18 +9,15 @@ export default function NavBar() {
   return <Box sx={{ flexGrow: 1, marginBottom: 2 }}>
     <AppBar position="static">
       <Toolbar>
-        <Link href="/">
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Job Board
+            <Link href="/">Job Board</Link>
           </Typography>
-        </Link>
 
-        <Link href="/saved-jobs">
           <Typography variant="h6" component="div" sx={{ paddingRight: 2 }}>
-            Saved Jobs
+            <Link href="/saved-jobs">Saved Jobs</Link>
           </Typography>
-        </Link>
-
+        
         <Typography variant="h6" component="div" sx={{ paddingRight: 2 }}>
           Applications
         </Typography>
