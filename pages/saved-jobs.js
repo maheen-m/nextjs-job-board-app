@@ -21,11 +21,14 @@ export default function SavedJobsPage() {
     }, []);
 
     const deleteSavedJob = (deleteId) => {
-        let updatedJobs = savedJobs.filter((job) => {
-            return job.id !==deleteId;
-        });
-        setSavedJobs(updatedJobs)
-    }
+    fetch('/api/saved-jobs', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: deleteId }),
+    });
+};
 
     if (loading) {
         return (
@@ -44,10 +47,7 @@ export default function SavedJobsPage() {
         <main>
             <NavBar />
             <Container>
-                <h1>Saved Jobs</h1>
-
-    <SavedJobsList savedJobs={savedJobs} deleteCallback={deleteSavedJob} />
-
+                <SavedJobsList savedJobs={savedJobs} deleteCallback={deleteSavedJob} />
             </Container>
         </main>
 
