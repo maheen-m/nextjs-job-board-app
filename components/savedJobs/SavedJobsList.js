@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 
 import SavedJobItem from './SavedJobItem';
 
-export default function SavedJobsList({savedJobs}) {
+export default function SavedJobsList({savedJobs, deleteCallback}) {
   
   return <div style={{width: '100%'}}>
     {savedJobs.length === 0 &&
@@ -13,7 +13,7 @@ export default function SavedJobsList({savedJobs}) {
       </Typography>
     }
     {savedJobs.map((savedJob) => {
-      return <SavedJobItem key={savedJob.id} savedJob={savedJob} />
+      return <SavedJobItem key={savedJob.id} savedJob={savedJob} deleteCallback={deleteCallback}  />
     })}
 
 

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function SavedJobItem({savedJob}) {
+export default function SavedJobItem({savedJob, deleteCallback}) {
 
   return <Card variant="outlined" sx={{ marginBottom: 2, width: "90%"}}>
     <Box sx={{ p: 2 }}  display="flex">
@@ -29,6 +29,7 @@ export default function SavedJobItem({savedJob}) {
           size="small"
           color="error"
           variant="contained"
+          onClick={() => deleteCallback(savedJob.id)}
         >
           Delete
         </Button>
