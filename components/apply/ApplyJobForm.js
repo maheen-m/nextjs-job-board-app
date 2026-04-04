@@ -3,6 +3,11 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
 export default function ApplyJobForm({job, submitCallback}) {
+
+  const handleSubmit = (event)=> {
+    event.preventDefault();
+    submitCallback();
+  };
   return <form style={{width: `90%`, }}>
     <Stack direction="column" spacing={2}>
       <TextField
