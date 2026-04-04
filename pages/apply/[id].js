@@ -24,14 +24,14 @@ export default function ApplyPage() {
     const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
-        if (!router.isReady) return;
+        if (!router.isReady && !id) return;
 
         getJob(id).then((data) => {
             setJob(data);
             setLoading(false);
         });
 
-    }, [router.isReady]);
+    }, [router.isReady, id]);
 
     const handleSubmit = () => {
         setSubmitted(true);
