@@ -38,6 +38,10 @@ export default function JobItem({job, savedJobs, setSavedJobs}) {
     }
   }
 
+  const navigateToApplyPage = () => {
+    router.push(`/apply/${job.id}`)
+  };
+
 
   return <>
     <Card variant="outlined" sx={{ marginBottom: 2, width: "90%"}}>
@@ -63,6 +67,15 @@ export default function JobItem({job, savedJobs, setSavedJobs}) {
           {job.qualifications}
         </Typography>
         <CardActions sx={{ justifyContent: 'flex-end', padding: 0, marginTop: 2 }}>
+           <Button
+          sx={{ mr: 1 }}
+          size="small"
+          color="success"
+          variant="contained"
+          onClick={navigateToApplyPage}
+        >
+          Apply Now
+        </Button>
           <Button
             startIcon={<BookmarkIcon/>}
             variant="contained"
